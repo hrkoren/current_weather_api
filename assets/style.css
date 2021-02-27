@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+:root {
+    --dark: #28b6cf;
+    --light: #5da1f0;
+    --weather: #3a46f5;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: var(--dark);
+    color: #ffffff;
+    margin-top: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
