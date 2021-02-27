@@ -20,4 +20,23 @@ body {
     margin-top: 20px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+.city {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    font-weight: 600;
+}
 
+#dayOne,
+#dayTwo,
+#dayThree,
+#dayFour,
+#dayFive {
+    display: flex;
+    flex-direction: column;
+    border: 4px solid var(--dark); 
+    flex-basis: 25%;
+    padding: 5px;
+    margin: 5px;
+    min-height: 250px;
+    background-size: cover;
+}
