@@ -14,19 +14,21 @@
         <h1 class="display-3">Weather Dashboard</h1>
 
     </header>
-
-    <div class="flex-row align-center justify-right bg-info">
-        <div class=".col-md-4 align-center bg-light p-5">
+<div class="container">
+        <div class="flex-row .col-6 align-items-center bg-light p-5">
           <h3 class="text-info">Search by City</h3>
           <form id="search-form" class="form w-50">
             <input id="search-input" class="form-input w-25" type="text" name="city-search" placeholder="Search by City"/>
             <button id="Search_button" class="btn btn-info">Search</button>
           </form>
+          <div class="flex-row col-4 align-right bg-info">
+              <ul class="city-group" id="city-list">List of Searched Cities</ul>
+          </div>
           </div>
         </div>
-    </div>
-     
-    <div class="flex-row align-right  justify-right bg-info">
+
+
+    <div class="flex-row align-right justify-right bg-info">
         <div class=".col-md-8 col align-self-end bg-info p-3">
             <h4 class="cityName"></h4>
             <div class="cityContainer"></div>

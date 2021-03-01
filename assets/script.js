@@ -1,7 +1,8 @@
 let searchFormEl = $('#search-form');
 let cityContainerEl = $('.cityContainer');
 let cityNameEl = $('.cityName');
-let searchBtn = document.getElementById('#Search_button'); 
+let searchBtn = $('#Search_button'); 
+let cityListEl = $('#city-list');
 
 function handleFormSubmit(event) {
   event.preventDefault();
@@ -14,12 +15,43 @@ function handleFormSubmit(event) {
   cityContainerEl.replaceWith('<h4>' + searchInputEl + '</h4>');
 
   $('input[name="city-search"]').val('');
-  console.log(searchInputEl);
+  // console.log(searchInputEl);
 }
 
 searchFormEl.on('submit', handleFormSubmit);
-
 //NOTE: icon display next to city name that matches weather
+
+
+//need to append to List of Searched Cities - not working!!
+var printCities = function (name) {
+  var listEl = $('<li>');
+  var listDetail = name;
+  listEl.addClass('list-group-item').text(listDetail);
+  listEl.appendTo(cityListEl);
+}
+
+// function searchApi(cityNameEl) {
+//   var apiURl = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=a4fdb9683d6a1f4cdbbf60857995908b';
+
+//   fetch(apiURL, {
+//     cache: 'reload,'
+//   }) 
+//     .then(function (response) {
+//       if (response.ok) {
+//         console.log(response);
+//         response.json().then(function (data) {
+//           console.log(cityName);
+//           displayWeather(data, cityNameEl);
+//         });
+//     }
+//     else {
+//       alert('Error: ' + response.statusText);
+//     }
+//   })
+//     .catch(function (error) {
+//       alert('Unable to connect to weather api');
+//     });
+// }
 
 
 
