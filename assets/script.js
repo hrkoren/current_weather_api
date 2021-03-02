@@ -30,59 +30,36 @@ var printCities = function (name) {
   listEl.appendTo(cityListEl);
 }
 
-// function searchApi(cityNameEl) {
-//   var apiURl = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=a4fdb9683d6a1f4cdbbf60857995908b';
-
-//   fetch(apiURL, {
-//     cache: 'reload,'
-//   }) 
-//     .then(function (response) {
-//       if (response.ok) {
-//         console.log(response);
-//         response.json().then(function (data) {
-//           console.log(cityName);
-//           displayWeather(data, cityNameEl);
-//         });
-//     }
-//     else {
-//       alert('Error: ' + response.statusText);
-//     }
-//   })
-//     .catch(function (error) {
-//       alert('Unable to connect to weather api');
-//     });
-// }
-
-
-
-  // var getCityWeather = function (cityName) {
-  //   var apiUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=a4fdb9683d6a1f4cdbbf60857995908b';
-  //   // var apiUrl = 'http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=a4fdb9683d6a1f4cdbbf60857995908b';
-  //   fetch(apiUrl)
-  //     .then(function (response) {
-  //       if (response.ok) {
-  //         console.log(response);
-  //         response.json().then(function (data) {
-  //           console.log(data);
-  //           displayWeather(data, cityName);
-  //         });
-  //       } else {
-  //         alert('Error: ' + response.statusText);
-  //       }
-  //     })
-  //     .catch(function (error) {
-  //       alert('Unable to connect to Weather');
-  //     });
-  // };
- 
-//   var displayWeather = function (city, searchCity) {
+function cityWeather(cityNameEl) {
+  //fetch with cityNameEl causes an error
+    // fetch('http://api.openweathermap.org/data/2.5/weather?q=' + cityNameEl + '&appid=a4fdb9683d6a1f4cdbbf60857995908b') 
+     fetch('http://api.openweathermap.org/data/2.5/weather?q=Pittsburgh&appid=a4fdb9683d6a1f4cdbbf60857995908b')   
+  .then(function(resp) { 
+    return resp.json() 
+  })
+  .then(function(data) {
+    getWeather(data);
+  })
+  .catch(function() {
     
-//     if (city.length === 0) {
-//       cityContainerEl.textContent = 'No cities found.';
-      
-//       return;
-//     } else {
-//         cityName.textContent = '';
-//         console.log(cityName);
-//     }
-// }
+  });
+}
+
+window.onload = function() {
+  cityWeather();
+}
+
+function getWeather(weatherData) {
+	var fahrenheit = Math.round(((parseFloat(weatherData.main.temp)-273.15)*1.8)+32); 
+	
+	document.getElementById('description').innerHTML = weatherData.weather[0].description;
+	document.getElementById('temp').innerHTML = fahrenheit + '&deg;';
+	document.getElementById('location').innerHTML = weatherData.name;
+}
+
+
+
+
+
+
+
