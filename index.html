@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="./assets/style.css">
-    <title>Current Weather</title>
+    <title>Weather Dashboard</title>
 </head>
 <body class="flex-column min-vh-100">
-    <header class="jumbotron">
+    <header class="header">
        <span style="font-size: 48px"><i class="fa fa-cloud"></i></span>
-            <h1 class="display-3">Weather Dashboard</h1>
+            <h1>Weather Dashboard</h1>
     </header>
 
 <main class="flex-row justify-space-between">
-<div class="col-12 col-md-6">
+<div class="col-6 col-md-6">
     <div class="inputCard">
         <h3 class="input-header">Search By City</h3>
             <form id="search-form" class="card-body">
@@ -25,7 +25,7 @@
                 <button type="submit" class="btn">Search</button>
             </form>
         <div class="flex-row col-6 align-right">
-            <ul class="city-group" id="city-list">List of Searched Cities</ul>
+            <div class="city-history">List of Searched Cities</div>
         </div>
     </div>
 </div>
@@ -39,7 +39,7 @@
                     <div id="icon"></div>
                     <h1 id="temp"><span><i class="fa-fahrenheit"></i></span></h1>
                     <div id="description"></div>
-                    <div>Humidity %: <span id="humidity"></span></div>
+                    <div>Humidity: <span id="humidity"></span>%</div>
                     <div>Wind Speed: <span id="wind"></span></div>
                     <div>UV Index:<span id="uv"></span></div>
                 </div>
@@ -47,42 +47,8 @@
     </div>
 </div>
 
-<div class="d-flex flex-row" id="five-day-box"> 
-    <div class="col-12 col-md-6">
-        <h4 class="fiveday">Five Day Forecast</h4>
-        <div id="day1">
-            <div class="day_date">Day</div>
-            <div class="day_description"></div>
-            <div id="icon"></div>
-            <div class="day_temp">Temperature</div>
-            <div class="day_humidity"></div>
-    </div>
-    </div> 
-       <div id="day2">
-            <div class="day_date">Day</div>
-            <div class="day_description"></div>
-            <div id="icon"></div>
-            <div class="day_temp">Temperature</div>
-            <div class="day_humidity"></div>
-        </div>
-        <div id="day3"></div>
-            <div class="day_date">Day</div>
-            <div class="day_description"></div>
-            <div id="icon"></div>
-            <div class="day_temp">Temperature</div>
-            <div class="day_humidity"></div>
-        <div id="day4"></div>
-            <div class="day_date">Day</div>
-            <div class="day_description"></div>
-            <div id="icon"></div>
-            <div class="day_temp">Temperature</div>
-            <div class="day_humidity"></div>
-        <div id="day5"></div>
-            <div class="day_date">Day</div>
-            <div class="day_description"></div>
-            <div id="icon"></div>
-            <div class="day_temp">Temperature</div>
-            <div class="day_humidity"></div>
+<div class="d-inline-flex flex-row" id="five-day-box"> 
+    <h4 class="fiveday">Five Day Forecast</h4><br />
     </div>
 </main>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

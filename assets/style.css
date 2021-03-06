@@ -8,22 +8,22 @@
 }
 
 body {
-    background-color: #ffffff;
+    background-color: #ddfaff;
     margin: 0;
     padding: 0;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.jumbotron {
+.header {
     text-align: center;
     background-color: var(--dark);
     color: var(--light);
-    margin-top: 20px;
-    height: 250px;
+    margin-top: 0px;
+    height: 150px;
 }
 
 h3,
-h4 {
+h4 .cityName {
     font-weight: 600;
     margin: 0;
     color: var(--light);
@@ -35,11 +35,11 @@ main {
     width: 94%;
 }
 
-.city-group {
+/* .city-group {
     margin-top: 5px;
     padding: 3px;
     border: 5px;
-}
+} */
 
 .btn {
     font-size: 1.2rem;
@@ -63,7 +63,6 @@ main {
     display: inline;
 }
 
-.city-group,
 .card-weather {
     padding: 0;
     list-style: none;
@@ -130,7 +129,7 @@ main {
 }
 
 .flex-row .card-weather {
-    width: 100%;
+    width: 50%;
     padding: 3%;
     margin: 5px 0;
     font-size: 1.2rem;
@@ -138,18 +137,42 @@ main {
     border-radius: 5px;
 }
 
+#location {
+    font-weight: 600;
+    color: var(--dark);
+    font-size: larger;
+}
+
+h4 {
+    /* display: inline; */
+    border: 1px solid (--dark);
+    color: var(--dark);
+}
+
 #five-day-box {
-    display: block;
+    /* display: block; */
     flex-direction: column;
-    border: 2px solid var(--dark); 
+    /* border: 2px solid var(--dark);  */
     border-radius: 5px;
     flex-basis: 100%;
     padding: 5px;
-    margin: 8px;
+    padding-right: 10px;
+    margin: 9px 0;
     min-height: 250px;
-    background-size: cover;
+    /* background-color: var(--light); */
+    /* background-size: 50%; */
 }
 
+.day {
+    margin-top: 7px;
+    padding: 8px;
+    flex-direction: column;
+    display: inline-flex;
+    border: 1px solid var(--dark);
+    color: var(--light);
+    background-color: var(--dark);
+    /* background-color: var(--dark); */
+}
 
 .min-100-vh {
     min-height: 100vh;
