@@ -6,7 +6,7 @@ Click [here to check the current and 5-day forecast](https://hrkoren.github.io/c
 
 ## Usage 
 
-![Image of Weather Dashboard](./assets/images/weather_dashboard)
+![Image of Weather Dashboard](./assets/images/weather_dashboard.PNG)
 
 1. Open the URL.
 2. Type in a city and click the Search button.
