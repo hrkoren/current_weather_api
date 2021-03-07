@@ -17,25 +17,27 @@ function handleFormSubmit(event) {
     return;
   }
   cityWeather(searchInputEl);
-  localStorage.setItem('city-history', JSON.stringify(searchInputEl));
+  searchHistory.push(searchInputEl);
+  localStorage.setItem('city-history', JSON.stringify(searchHistory));
 
-  postSearchHistory();
+  cityListEl.append('<li>' + searchInputEl + '</li>');
 }
 
-function postSearchHistory(){
+function postSearchHistory() {
   let storedCity = JSON.parse(localStorage.getItem('city-history'));
   searchHistory = storedCity;
 
   for (var i = 0; i < searchHistory.length; i++) {
-    // let dayDate = $('<div class="day_date">').text(data.list[i].dt_text);
-      let citySearchHist = $('<ul class="city-history">').addClass('id', 'list-group');
-      let searchHistoryList = $('<li>').addClass('id', 'list-group-item')
-       + searchHistoryList.text(searchHistory[i]);
-      cityListEl.append(citySearchHist);
+    let searchHistoryList = $('<li>' + (i + 1) + '</li>').addClass('id', 'list-group-item');
+    // let historyBtn = $('<input>' + searchInputEl + '<input/>').attr({type: 'button', name: 'searchInputEl, value: searchInputEl'});
+    searchHistoryList.text(searchHistory);
+    cityListEl.append('<li>' + searchInputEl + '</li>');
+    cityListEl.children('li').append(historyBtn);
 
-      citySearchHist.append(searchHistoryList);
   }
+  postSearchHistory();
 }
+
 
 searchFormEl.on('submit', handleFormSubmit);
 
@@ -56,6 +58,7 @@ function getWeather(weatherData) {
   var fahrenheit = Math.round(((parseFloat(weatherData.main.temp) - 273.15) * 1.8) + 32);
   console.log(weatherData);
 
+  // $('#date').text(weatherData.currentDay);
   $('#description').text(weatherData.weather[0].description);
   $('#icon').html(`<img src='http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png'>`);
   $('#temp').text(fahrenheit)
@@ -63,10 +66,13 @@ function getWeather(weatherData) {
   $('#location').text(weatherData.name);
   $('#wind').text(weatherData.wind.speed);
   $('#humidity').text(weatherData.main.humidity);
-  // document.getElementById('uv').innerHTML = weatherData.uvi; 
-  // not seeing UV index in console but it's supposed to be uvi
-  getForecastData(weatherData.name);
 
+  // let lat = weatherData.coord.lat;
+  // let lon = weatherData.coord.lon;
+  // getUVindex(lat,lon);
+
+  getForecastData(weatherData.name);
+  // UVindex(data.current.uvi);
 }
 
 function getForecastData(cityName) {
@@ -82,7 +88,6 @@ function getForecastData(cityName) {
       for (var i = 0; i < data.list.length; i++) {
         console.log(i);
         if (data.list[i].dt_txt.indexOf('03:00:00') !== -1) {
-          // if (data.list[i].dt_txt.includes('03:00:00')) {
           console.log(data.list[i]);
           var fahrenheit = Math.round(((parseFloat(data.list[0].main.temp) - 273.15) * 1.8) + 32);
 
@@ -96,10 +101,42 @@ function getForecastData(cityName) {
           let dayHumidity = $('<div class="day_humidity">').text("Humidity: " + data.list[i].main.humidity + "%");
 
           dayContainer.append(dayDate, dayDesc, icon, dayTemp, dayHumidity);
+        }
       }
-    }
-  })
+    })
 
     .catch(function () {
     });
-  }
+}
+
+// function UVindex(lat, lon) {
+  
+//   fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&units=imperial&appid=' + apiKey + '&cnt=1')
+//     .then(function (resp) {
+//       return resp.json()
+//     })
+//     .then(function (data) {
+//       getUVindex(data);
+//       console.log(data);
+      
+//       let UVIndex = $('#uv').text(data.current.uvi);
+
+//       if (uvi > 2 && uvi < 6) {
+//         $('#uv').remove('green');
+//         $('#uv').add('yellow');
+//       } 
+//       else if (uvi > 5 && uvi < 8) {
+//         $('#uv').remove('green');
+//         $('#uv').add('orange');
+//       } 
+//       else if (uvi > 8) {
+//         $('#uv').remove('green');
+//         $('#uv').add('red');
+//       };
+    
+//       UVIndex.append(data);
+
+//     })
+//     .catch(function () {
+//     });
+// }

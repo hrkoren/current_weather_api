@@ -25,7 +25,8 @@
                 <button type="submit" class="btn">Search</button>
             </form>
         <div class="flex-row col-6 align-right">
-            <div class="city-history">List of Searched Cities</div>
+            <ul class="city-history"></ul>
+            <!-- <button class="historyBtn"></button> -->
         </div>
     </div>
 </div>
@@ -35,6 +36,7 @@
         <div id="cityContainer" class="card-weather">
             <h4 class="cityName">Showing Weather for <span id="city-search-name"></span></h4>
                 <div id="weather">
+                    <div id="date"></div>
                     <div id="location"></div>
                     <div id="icon"></div>
                     <h1 id="temp"><span><i class="fa-fahrenheit"></i></span></h1>
