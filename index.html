@@ -16,8 +16,9 @@
             <h1>Weather Dashboard</h1>
     </header>
 
-<main class="flex-row justify-space-between">
-<div class="col-6 col-md-6">
+<main class="row justify-content-md">
+    <!-- Search Placeholder -->
+<div class="col-md-4 p-3">
     <div class="inputCard">
         <h3 class="input-header">Search By City</h3>
             <form id="search-form" class="card-body">
@@ -26,13 +27,13 @@
             </form>
         <div class="flex-row col-6 align-right">
             <ul class="city-history"></ul>
-            <!-- <button class="historyBtn"></button> -->
         </div>
     </div>
 </div>
-    
-<div class="flex-row justify-space-between">
-    <div class="col-12 col-md-6">
+<!-- Daily Weather container -->
+    <div class="col-4 p-3">
+<div class="row justify-content-md-center">
+    <div class="col-md-12">
         <div id="cityContainer" class="card-weather">
             <h4 class="cityName">Showing Weather for <span id="city-search-name"></span></h4>
                 <div id="weather">
@@ -43,15 +44,19 @@
                     <div id="description"></div>
                     <div>Humidity: <span id="humidity"></span>%</div>
                     <div>Wind Speed: <span id="wind"></span></div>
-                    <div>UV Index:<span id="uv"></span></div>
+                    <div>UV Index: <span id="uv"></span></div>
                 </div>
             </div>
     </div>
 </div>
-
-<div class="d-inline-flex flex-row" id="five-day-box"> 
+<!-- Five day forecast container -->
+<div class="d-inline-flex flex-row"> 
     <h4 class="fiveday">Five Day Forecast</h4><br />
+    <div id="five-day-box">
+    
+</div>
     </div>
+</div>
 </main>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="assets/script.js"></script>

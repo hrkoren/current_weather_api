@@ -8,10 +8,11 @@
 }
 
 body {
-    background-color: #e9f9fc;
+    background-color: #77dbfa;
     margin: 0;
     padding: 0;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    justify-items: center;
 }
 
 .header {
@@ -47,6 +48,13 @@ main {
     color: #ffffff;
 }
 
+.cityBtn {
+    flex-direction: column;
+    padding: 2px;
+    margin: 2px;
+    color: (--dark);
+}
+
 .btn:hover {
     color: gray;
     background-color: (--light);
@@ -58,7 +66,8 @@ main {
 }
 
 .card-weather {
-    padding: 0;
+    margin-left: 50px;
+    padding: 1;
     list-style: none;
 }
 
@@ -79,6 +88,10 @@ main {
     border-radius: 8px;
 }
 
+.inputCard {
+    margin-left: 50px;
+}
+
 .input-header {
     color: var(--light);
     background-color: var(--dark);
@@ -89,6 +102,10 @@ main {
 .card-body, 
 .card-weather {
     padding: 2%;
+}
+
+.card-weather {
+    float: right;
 }
 
 .form-input,
@@ -105,24 +122,24 @@ main {
     border-radius: 5px;
 }
 
-.flex-row .cityName {
+.col-md-12 .cityName {
     color: var(--light);
     background-color: var(--dark);
     padding: 2%;
     border-radius: 6px;
 }
 
-.flex-row #cityContainer {
+.col-md-12 #cityContainer {
     display: block;
     width: 100%;
     padding: 3%;
-    margin: 5px 0;
+    margin: 4px 0 0 15px;
     font-size: 1.2rem;
     border: 2px solid var(--dark);
     border-radius: 5px;
 }
 
-.flex-row .card-weather {
+.col-md-12 .card-weather {
     width: 50%;
     padding: 3%;
     margin: 5px 0;
@@ -137,36 +154,39 @@ main {
     font-size: larger;
 }
 
-h4 {
-    /* display: inline; */
+h4 .fiveday {
+    display: inline;
     border: 1px solid (--dark);
     color: var(--dark);
-}
-
-.five-day-box {
-    /* display: block; */
-    /* flex-direction: column; */
-    /* border: 2px solid var(--dark);  */
-    float: right;
-    border-radius: 5px;
-    flex-basis: 100%;
-    padding: 5px;
-    padding-right: 10px;
-    margin: 9px 0;
-    min-height: 250px;
-    /* background-color: var(--light); */
-    /* background-size: 50%; */
+    padding-top: 10px;
+    margin-top: 10px;
 }
 
 .day {
     margin-top: 7px;
-    padding: 8px;
+    padding: 5px;
     flex-direction: column;
     display: inline-flex;
     border: 1px solid var(--dark);
     color: var(--light);
     background-color: var(--dark);
-    /* background-color: var(--dark); */
+    flex-basis: auto;
+    justify-content: space-around;
+}
+
+.red {
+    color: red;
+    background-color: black;
+}
+
+.green {
+    color: green;
+    background-color: black;
+}
+
+.yellow {
+    color: yellow;
+    background-color: black;
 }
 
 .min-100-vh {
@@ -177,16 +197,16 @@ h4 {
     min-width: 100vw;
 }
 
-/* .flex-row {
+.flex-row {
     display: flex;
-    flex-wrap: wrap;
-}  */
+    flex-wrap: nowrap;
+}  
 
-.flex-column {
+/* .flex-column {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-}
+    flex-wrap: nowrap;
+} */
 
 .justify-space-between {
     justify-content: space-between;
@@ -196,6 +216,6 @@ h4 {
     justify-content: flex-end;
 }
 
-.justify-center {
+/* .justify-center {
     justify-content: center;
-}
+} */
