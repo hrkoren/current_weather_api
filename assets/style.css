@@ -175,18 +175,18 @@ h4 .fiveday {
 }
 
 .red {
-    color: red;
-    background-color: black;
+    color: black;
+    background-color: red;
 }
 
 .green {
-    color: green;
-    background-color: black;
+    color:black; 
+    background-color: green;
 }
 
 .yellow {
-    color: yellow;
-    background-color: black;
+    color: black;
+    background-color: yellow;
 }
 
 .min-100-vh {

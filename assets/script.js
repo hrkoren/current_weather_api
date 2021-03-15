@@ -39,8 +39,9 @@ function postSearchHistory() {
     })
     cityListEl.append(searchCityBtn);
   }
+  postSearchHistory();
 }
-postSearchHistory();
+
 
 searchFormEl.on('submit', handleFormSubmit);
 
