@@ -79,7 +79,7 @@ function getWeather(weatherData) {
 
 function getForecastData(cityName) {
 
-  return fetch('httpss://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=' + apiKey, {
+  return fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=' + apiKey, {
     method: 'GET',
 
   }).then(function (resp) {
