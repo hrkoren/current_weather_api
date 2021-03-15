@@ -47,7 +47,7 @@ searchFormEl.on('submit', handleFormSubmit);
 
 function cityWeather(cityNameEl) {
 
-  fetch('http://api.openweathermap.org/data/2.5/weather?q=' + cityNameEl + '&appid=' + apiKey)
+  fetch('https://api.openweathermap.org/data/2.5/weather?q=' + cityNameEl + '&appid=' + apiKey)
     .then(function (resp) {
       return resp.json()
     })
@@ -63,7 +63,7 @@ function getWeather(weatherData) {
   console.log(weatherData);
 
   $('#description').text(weatherData.weather[0].description);
-  $('#icon').html(`<img src='http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png'>`);
+  $('#icon').html(`<img src='https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png'>`);
   $('#temp').text(fahrenheit)
     + ($('.fa-fahrenheit'));
   $('#location').text(weatherData.name);
@@ -79,7 +79,7 @@ function getWeather(weatherData) {
 
 function getForecastData(cityName) {
 
-  return fetch('http://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=' + apiKey, {
+  return fetch('httpss://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=' + apiKey, {
     method: 'GET',
 
   }).then(function (resp) {
@@ -99,7 +99,7 @@ function getForecastData(cityName) {
 
           let dayDate = $('<div class="day_date">').text(new Date(data.list[i].dt_txt).toLocaleDateString());
           let dayDesc = $('<div class="day_description">').text(data.list[i].weather[0].description);
-          let icon = $(`<img src='http://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png'>`);
+          let icon = $(`<img src='https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png'>`);
           let dayTemp = $('<div class="day_temp">').text("Temp: " + fahrenheit);
           let dayHumidity = $('<div class="day_humidity">').text("Humidity: " + data.list[i].main.humidity + "%");
 
